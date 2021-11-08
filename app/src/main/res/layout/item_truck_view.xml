@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.trucksmap.activity.model.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/RobotoBold_16"
+                android:id="@+id/truckNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@{model.truckNumber}"
+                android:textColor="@color/TruckMap_PinkColor2"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                style="@style/RobotoMedium_12"
+                android:id="@+id/tructStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:alpha="0.6"
+                android:text="Stpped Since last 234 days"
+                app:layout_constraintStart_toStartOf="@id/truckNo"
+                app:layout_constraintTop_toBottomOf="@id/truckNo"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            <TextView
+                style="@style/RobotoMedium_12"
+                android:id="@+id/tructRunningStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="45623"
+                android:alpha="0.6"
+                android:textColor="@color/TruckMap_PinkColor2"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                style="@style/RobotoMedium_12"
+                android:id="@+id/truckkm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="k/h"
+                android:alpha="0.6"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tructRunningStatus"/>
+
+            <TextView
+                style="@style/RobotoMedium_12"
+                android:id="@+id/tructkmNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:alpha="0.6"
+                android:textColor="@color/TruckMap_PinkColor2"
+                app:layout_constraintTop_toTopOf="@id/truckkm"
+                app:layout_constraintEnd_toStartOf="@id/truckkm"
+                app:layout_constraintBottom_toBottomOf="@id/truckkm"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
